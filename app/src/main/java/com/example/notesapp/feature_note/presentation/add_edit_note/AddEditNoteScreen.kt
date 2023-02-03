@@ -22,6 +22,8 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.example.notesapp.core.util.TestTags.CONTENT_TEXT_FIELD
+import com.example.notesapp.core.util.TestTags.TITLE_TEXT_FIELD
 import com.example.notesapp.feature_note.domain.model.Note
 import com.example.notesapp.feature_note.presentation.add_edit_note.components.TransparentHintTextField
 import kotlinx.coroutines.flow.collectLatest
@@ -129,6 +131,7 @@ fun AddEditNoteScreen(
                 },
                 isHintVisible = titleState.isHintVisible,
                 singleLine = true,
+                testTag = TITLE_TEXT_FIELD,
                 textStyle = MaterialTheme.typography.h5
             )
             Spacer(modifier = Modifier.height(16.dp))
@@ -143,6 +146,7 @@ fun AddEditNoteScreen(
                 },
                 isHintVisible = contentState.isHintVisible,
                 textStyle = MaterialTheme.typography.body1,
+                testTag = CONTENT_TEXT_FIELD,
                 modifier = Modifier.fillMaxHeight()
             )
         }
